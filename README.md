@@ -27,7 +27,7 @@ Knowing that :
 You can follow the 5 steps below, to use straight the application.
 
 But if you want to use your own images of microservices, check below `How to upload an image's service to your Docker Registry`
-And if you want to use your own package of library through Nexus, check below `Configuration of Nexus` and `Deployment of Libray to Nexus`
+And if you want to use your own package of library through Nexus, check below `Configuration of Nexus` and `Deployment of Library to Nexus`
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 2. Clone [Mediscreen_App](https://github.com/HashTucE/Mediscreen_App.git) on your local machine.
