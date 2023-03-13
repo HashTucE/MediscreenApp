@@ -7,13 +7,13 @@
 
 Medical webapp composed by the following microservices :
 
-1. [Patient](https://github.com/HashTucE/Patient.git) is a rest Api that allows you to create, modify or delete clients from a medical practice stored in a mySQL database.
-2. [Note](https://github.com/HashTucE/Note.git) is a rest Api that allows you to create, modify or delete notes to keep track of visits in a mongodb database.
-3. [Assessment](https://github.com/HashTucE/Assessment.git) is a rest api that communicates with Patient and Note to retrieve data to assess the risk for a patient of contracting type 2 diabetes.
-4. [Front](https://github.com/HashTucE/Front.git) is an interface user developed in html with thymeleaf and bootstrap.
-5. [Library](https://github.com/HashTucE/Library.git) groups common objects that will be shared by the repository manager, Nexus.
-6. Mysql allow to persist data from Patient.
-7. MongoDB allow to persist data from Note.
+1. patient, is a rest Api that allows you to create, modify or delete clients from a medical practice stored in a mySQL database.
+2. note, is a rest Api that allows you to create, modify or delete notes to keep track of visits in a mongodb database.
+3. assessment](https://github.com/HashTucE/Assessment.git) is a rest api that communicates with Patient and Note to retrieve data to assess the risk for a patient of contracting type 2 diabetes.
+4. front, is an interface user developed in html with thymeleaf and bootstrap.
+5. library, groups common objects that will be shared by the repository manager, Nexus.
+6. mysql allow to persist data from Patient.
+7. mongoDB allow to persist data from Note.
 
 
 
@@ -89,7 +89,7 @@ And if you want to use your own package of library through Nexus, check below `C
 
 # How to upload an image's service to your Docker Registry
 
-To make it easier to read, I write an example with Patient but you will have to do it with Patient, Note, Assessment and Front.
+To make it easier to read, I write an example with Patient but you will have to do it with patient, note, assessment and front.
 
 Prerequisites :
 - Java 19
@@ -98,11 +98,11 @@ Prerequisites :
 - MySQL 8.0.29
 - Docker 4.16.2
 
-2. Using a prompt, once located to the root of `Patient`, execute this command to compile, test, package and install the project :
+2. Using a prompt, once located to the root of `patient`, execute this command to compile, test, package and install the project :
   ```
   mvn clean install
   ```
-3. Still at the same location (to point to the `Dockerfile`) build the image of `Patient` using :
+3. Still at the same location (to point to the `Dockerfile`) build the image of `patient` using :
   ```
   docker build -t jar .
   (Make sure that the jar name inside the Dockerfile is identical to the jar name located to the target folder !)
@@ -126,7 +126,7 @@ Prerequisites :
 
 1. Install [Nexus](https://help.sonatype.com/repomanager3/installation-and-upgrades/installation-methods).
 I recommend you to install it with [his](https://hub.docker.com/r/sonatype/nexus3/) Docker image.
-2. Keep in mind that on your local machine the port 8081 will be used with Patient so when installing Nexus, bind the port like this 8084:8081. Once installed and ran, click on the port as you can see below or go to http://localhost:8084 to be redirected to the Nexus interface user :
+2. Keep in mind that on your local machine the port 8081 will be used with patient so when installing Nexus, bind the port like this 8084:8081. Once installed and ran, click on the port as you can see below or go to http://localhost:8084 to be redirected to the Nexus interface user :
 <p align="center">
   <img src=https://user-images.githubusercontent.com/95872501/224268285-bc76f6de-5481-49a2-b50c-66041ea6a6f6.png>
 </p>
@@ -165,7 +165,7 @@ Prerequisites :
     ```
     mvn package
     ```
-2. Then enter this command to deploy `Library` to your `Nexus` repository :
+2. Then enter this command to deploy `library` to your `Nexus` repository :
     ```
     mvn deploy
     ```
