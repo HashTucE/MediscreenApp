@@ -7,13 +7,13 @@
 
 Medical webapp composed by the following microservices :
 
-1. patient, is a rest Api that allows you to create, modify or delete clients from a medical practice stored in a mySQL database.
-2. note, is a rest Api that allows you to create, modify or delete notes to keep track of visits in a mongodb database.
-3. assessment](https://github.com/HashTucE/Assessment.git) is a rest api that communicates with Patient and Note to retrieve data to assess the risk for a patient of contracting type 2 diabetes.
-4. front, is an interface user developed in html with thymeleaf and bootstrap.
-5. library, groups common objects that will be shared by the repository manager, Nexus.
-6. mysql allow to persist data from Patient.
-7. mongoDB allow to persist data from Note.
+1. `patient` is a rest Api that allows you to create, modify or delete clients from a medical practice stored in a mySQL database.
+2. `note` is a rest Api that allows you to create, modify or delete notes to keep track of visits in a mongodb database.
+3. `assessment` is a rest api that communicates with Patient and Note to retrieve data to assess the risk for a patient of contracting type 2 diabetes.
+4. `front` is an interface user developed in html with thymeleaf and bootstrap.
+5. `library` groups common objects that will be shared by the repository manager, Nexus.
+6. `mysql` allow to persist data from Patient.
+7. `mongoDB` allow to persist data from Note.
 
 
 
@@ -21,7 +21,7 @@ Medical webapp composed by the following microservices :
 
 Knowing that :
 - The 4 microservices's images required are stored into my `Docker Registry`
-- The 2 databases's images required are stored into my `Docker Hub`
+- The 2 databases's images required are stored into `Docker Hub`
 - The Library's package required is stored into my `distant Nexus repository`
 
 You can follow the 5 steps below, to use straight the application.
