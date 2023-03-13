@@ -24,7 +24,7 @@ Knowing that :
 - The 2 databases's images required are stored into `Docker Hub`
 - The Library's package required is stored into my `distant Nexus repository`
 
-You can follow the 5 steps below, to use straight the application.
+You can follow the 5 steps below to use straight the application.
 
 But if you want to use your own images of microservices, check below `How to upload an image's service to your Docker Registry`
 And if you want to use your own package of library through Nexus, check below `Configuration of Nexus` and `Deployment of Library to Nexus`
