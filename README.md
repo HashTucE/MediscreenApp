@@ -31,7 +31,7 @@ And if you want to use your own package of library through Nexus, check below `C
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 2. Clone [Mediscreen_App](https://github.com/HashTucE/Mediscreen_App.git) on your local machine.
-3. Check if environment's variables, paths and binding ports into the docker-compose.yml fits to you and save changes if necessary.
+3. Check if `environment's variables`, `paths` and `binding ports` into the `docker-compose.yml` fits to you and save changes if necessary.
 4. Then build the project opening a prompt, locating to the root of Mediscreen_App folder and running the following command :
     ```
     docker-compose up -d
@@ -48,6 +48,7 @@ And if you want to use your own package of library through Nexus, check below `C
 - The assessment change dynamically depending on trigger's words containing into the triggers.txt.
 - Create/update a note with warning message when trying to validate empty mandatory field.
 - Delete a note.
+
 
 # How to modify triggers list from the container
 
@@ -101,6 +102,7 @@ As you can see on the `docker-compose.yml`, `patient` is configured to persist h
   select * from patient;
   ```
 
+
 # How to browse the note's database from the container
 
 As you can see on the `docker-compose.yml`, `note` is configured to persist his data inside a mongoDB database without any user :
@@ -118,7 +120,6 @@ As you can see on the `docker-compose.yml`, `note` is configured to persist his 
   ```
   db.notes.find();
   ```
-  
   
   
 # How to upload an image's service to your Docker Registry
@@ -155,6 +156,7 @@ Prerequisites :
   ```
   [your_docker_username]/[distant_repository_name]:latest
   ```
+
 
 # Configuration of Nexus
 
