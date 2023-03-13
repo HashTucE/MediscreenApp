@@ -51,21 +51,13 @@ And if you want to use your own package of library through Nexus, check below `C
 
 # How to modify triggers list 
 
-1. First you need the id of the assessment.ms's container and there is 2 ways to find it :
-- Execute the following command into a prompt :
-    ```
-    docker ps
-    ```
-- Or you can find it below "assessment.ms" container into Docker Desktop :
-<p align="center">
-  <img src=https://user-images.githubusercontent.com/95872501/224640844-edf8b9f5-097e-469a-a7b9-5f93f3d3da2b.png>
-</p>
+As you can see on the `docker-compose.yml`, the `triggers's list` allowing to assess a patient is located on the `app` folder of the `assessment.ms` container.
 
-2. Execute this command to access to the shell of assessment.ms's container :
+1. Execute this command to access to the shell of assessment.ms's container :
     ```
-    docker exec -it [replace by assessment_id] /bin/sh
+    docker exec -it assessment.ms /bin/sh
     ```
-3. Execute this command to access to triggers.txt folder :
+2. Execute this command to access to triggers.txt folder :
     ```
     cd app/
     ```
@@ -87,6 +79,29 @@ And if you want to use your own package of library through Nexus, check below `C
     - type `:q!` to exit the editor without saving changes.
 
 
+# How to browse the patient's database
+
+As you can see on the `docker-compose.yml`, `patient` is configured to persist his data inside a mySQL database with the following credentials but feel free to change it on both services, `patient.ms` and `patient.db`, if you want :
+  ```
+  username : root
+  password : pass
+  ```
+1. Make sure this container is `Running`.
+2. Execute this command on a prompt to be connected to the database :
+  ```
+  docker exec -it patient.db mysql -u root -p
+  ```
+3. Enter the password of the root user and press Ènter.
+4. Once Mysl monitor started, enter this command to access to the database `mediscreen` :
+  ```
+  use mediscreen;
+  ```
+5. And finally, you will find the patients's data browsing the `patient table` :
+  ```
+  select * from patient;
+  ```
+
+  
 # How to upload an image's service to your Docker Registry
 
 To make it easier to read, I write an example with Patient but you will have to do it with patient, note, assessment and front.
