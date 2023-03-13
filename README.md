@@ -49,7 +49,7 @@ And if you want to use your own package of library through Nexus, check below `C
 - Create/update a note with warning message when trying to validate empty mandatory field.
 - Delete a note.
 
-# How to modify triggers list 
+# How to modify triggers list from the container
 
 As you can see on the `docker-compose.yml`, the `triggers's list` allowing to assess a patient is located on the `app` folder of the `assessment.ms` container.
 
@@ -79,14 +79,14 @@ As you can see on the `docker-compose.yml`, the `triggers's list` allowing to as
     - type `:q!` to exit the editor without saving changes.
 
 
-# How to browse the patient's database
+# How to browse the patient's database from the container
 
 As you can see on the `docker-compose.yml`, `patient` is configured to persist his data inside a mySQL database with the following credentials but feel free to change it on both services, `patient.ms` and `patient.db`, if you want :
   ```
   username : root
   password : pass
   ```
-1. Make sure this container is `Running`.
+1. Make sure `patient.db` container is `Running`.
 2. Execute this command on a prompt to be connected to the database :
   ```
   docker exec -it patient.db mysql -u root -p
@@ -101,6 +101,25 @@ As you can see on the `docker-compose.yml`, `patient` is configured to persist h
   select * from patient;
   ```
 
+# How to browse the note's database from the container
+
+As you can see on the `docker-compose.yml`, `note` is configured to persist his data inside a mongoDB database without any user :
+
+1. Make sure `note.db` container is `Running`.
+2. Execute this command on a prompt to be connected to the database :
+  ```
+  docker exec -it note.db mongosh
+  ```
+4. Once mongoDB's shell started, enter this command to access to the database `mediscreen` :
+  ```
+  use mediscreen
+  ```
+5. And finally, you will find the notes's data browsing the `notes's collection` :
+  ```
+  db.notes.find();
+  ```
+  
+  
   
 # How to upload an image's service to your Docker Registry
 
